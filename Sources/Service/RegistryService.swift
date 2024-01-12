@@ -11,6 +11,10 @@ public struct RegistryService {
 
     public init(with app: Application) {
 
+        // Use the File Middleware to serve the files hosting in Public Directory
+        let publicFileMiddleware = FileMiddleware(publicDirectory: app.directory.publicDirectory)
+        app.middleware.use(publicFileMiddleware)
+
         // Create a VaporTransport using your application.
         let transport = VaporTransport(routesBuilder: app)
 

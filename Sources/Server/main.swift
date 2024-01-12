@@ -13,7 +13,7 @@ let app = Vapor.Application()
 
 // Create an instance of your handler type that conforms the generated protocol
 // defininig your service API.
-let handler = RegistryService(with: app)
+let service = RegistryService(with: app)
 
 // Start the app as you would normally.
 try await app.execute()
